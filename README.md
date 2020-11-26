@@ -3,7 +3,6 @@ Exercices from the EdX Harvard CS50 Web : Programming with Python and JavaScript
 
 
 
-https://online-learning.harvard.edu/course/cs50s-web-programming-python-and-javascript?delta=0 - automatic!
-[Harvard CS50 web ]
+https://online-learning.harvard.edu/course/cs50s-web-programming-python-and-javascript?delta=0
 
-![Image of Harvard](https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Harvard_shield_wreath.svg/1200px-Harvard_shield_wreath.svg.png =60x60)
+![Image of Harvard](https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Harvard_shield_wreath.svg/1200px-Harvard_shield_wreath.svg.png=60x60)
