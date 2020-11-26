@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--Style-->
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <!--Browser Icon-->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+		<!--Fontawsome-->
+		<script src="https://kit.fontawesome.com/873e0e2f7d.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+
+		<div class="navbar d-flex justify-content-end">
+            <a href="google_image_search.html">Image search</a>
+            <a href="google_advanced_search.html">Advanced search</a>
+        </div>
+
+        <div class="my-container">
+        	
+        	<img id="logo" src="logo-google.png" alt="Google Logo">
+
+        	<form action="https://google.com/search">
+				
+				<div class="row input-container "> 
+				  	<i class="fas fa-search col-xs-3" id="search-icon"></i>
+				  	<ul id="inputs" class="col-xs-8 border-0">
+				  		<li><input class="border-0" type="search" name="q"></li>
+				  	</ul>
+				</div>
+	            
+	            <div id="search-buttons">
+		            <input type="submit" class="btn-ghost" value="Google Search">
+		            <input type="submit" class="btn-ghost" id="lucky_btn" value="I &#39;m Feeling Lucky">
+		        </div>
+			
+			</form>
+ 		</div>
+
+		<script>
+    		const lucky_btn = document.getElementById("lucky_btn");
+    		lucky_btn.addEventListener("click", (event) =>{
+    			const inputs = document.getElementById("inputs");
+				inputs.insertAdjacentHTML('beforeend', '<li><input type="search" name="btnI" hidden></li>');
+    		});
+	    </script>
+
+    </body>
+
+</html>

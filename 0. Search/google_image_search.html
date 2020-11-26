@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <div class="navbar d-flex justify-content-end">
+            <a href="index.html">Search</a>
+        </div>
+
+        <div class="my-container">
+            
+            <img id="logo" src="logo-google-images.png" alt="Google Logo Images">
+
+            <form action="https://google.com/images" id="search_form">
+                
+                <div class="row input-container "> 
+                    <i class="fas fa-search col-xs-3" id="search-icon"></i>
+                    <ul id="inputs" class="col-xs-8">
+                        <li><input type="search" name="q" id="user_query"></li>
+                    </ul>
+                </div>
+                
+                <div id="search-buttons">
+                    <input type="submit" class="btn-ghost" value="Google Search" id="submit_img_btn">
+                </div>
+            
+            </form>
+        </div>
+
+<<<<<<< HEAD
+=======
+        
+        "tmb=isch"
+>>>>>>> 7d3ce9c9e2dc8fd606c2ea63c452b74fb5728996
+        <script>
+            const lucky_btn = document.getElementById("lucky_btn");
+            lucky_btn.addEventListener("click", (event) =>{
+                const inputs = document.getElementById("inputs");
+                inputs.insertAdjacentHTML('beforeend', '<li><input type="search" name="btnI" hidden></li>');
+            });
+        </script>
+
+    </body>
+</html>

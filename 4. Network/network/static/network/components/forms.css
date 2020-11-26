@@ -1,0 +1,23 @@
+.form {
+  font-size: 13px;
+  padding: 20px;
+  font-family: Montserrat, sans-serif
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0px auto;
+}
+
+textarea {
+  height: 100px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: white;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+.form-control {
+  font-size: 14px;
+  text-align: left;
+}

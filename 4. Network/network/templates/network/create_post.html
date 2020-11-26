@@ -1,0 +1,21 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+
+	<h2 class="section-title">Add a new post</h2>
+    
+    {% if message %}
+        <div class="flash-banner">{{ message }}</div>
+    {% endif %}
+
+    <div class="form">
+
+    	<form action="{% url 'create_post' %}" method="post">
+    		{% csrf_token %}
+    		<textarea rows="4" name="content" class="form-control" placeholder="Type your post"></textarea>
+    		<br>
+    		<input type="submit" class="btn-flat w-100" value="Send">
+    	</form>
+    </div>
+
+{% endblock %}

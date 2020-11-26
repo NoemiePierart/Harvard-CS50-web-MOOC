@@ -1,0 +1,82 @@
+[
+	{
+		"model" : "auctions.category",
+		"id" : 1,
+		"fields": {
+			"name": "Electronics",
+			"default_url": 'https://images.unsplash.com/photo-1519033628719-72e1861f20cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'  
+		} 
+	},
+
+	{
+		"model" : "auctions.category",
+		"id" : 2,
+		"fields": {
+			"name": "Baby",
+			"default_url": 'https://images.unsplash.com/photo-1537673156864-5d2c72de7824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'  
+		} 
+	},
+
+	{
+		"model" : "auctions.category",
+		"id" : 3,
+		"fields": {
+			"name": "Fashion",
+			"default_url": 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'  
+		} 
+	},
+
+	{
+		"model" : "auctions.category",
+		"id" : 4,
+		"fields": {
+			"name": "Home",
+			"default_url": 'https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'  
+		} 
+	},
+
+	{
+		"model" : "auctions.category",
+		"id" : 5,
+		"fields": {
+			"name": "Luggage",
+			"default_url": 'https://images.unsplash.com/photo-1525103504173-8dc1582c7430?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
+		} 
+	},
+
+	{
+		"model" : "auctions.category",
+		"id" : 6,
+		"fields": {
+			"name": "Sports",
+			"default_url": 'https://images.unsplash.com/photo-1472108482137-8df36ccf0d7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'  
+		} 
+	},
+
+	{
+		"model" : "auctions.category",
+		"id" : 7,
+		"fields": {
+			"name": "Cars",
+			"default_url": 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'  
+		} 
+	},
+
+	{
+		"model" : "auctions.category",
+		"id" : 8,
+		"fields": {
+			"name": "Wine",
+			"default_url": 'https://images.unsplash.com/photo-1470158499416-75be9aa0c4db?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'  
+		} 
+	},
+
+	{
+		"model" : "auctions.category",
+		"id" : 9,
+		"fields": {
+			"name": "Pets",
+			"default_url": 'https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
+		} 
+	}
+]

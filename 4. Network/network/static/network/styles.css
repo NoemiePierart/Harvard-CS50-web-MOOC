@@ -1,0 +1,101 @@
+@import url("components/banner.css");
+@import url("components/navbar.css");
+@import url("components/post-card.css");
+@import url("components/forms.css");
+@import url("components/flash.css");
+@import url("components/footer.css");
+@import url("components/show_post.css");
+@import url("components/btn.css");
+
+
+body {
+    background-color: #F8F8F8;
+    font-family: 'Amiri', sans-serif;
+    position: relative;
+    min-height: 100vh;
+    text-decoration: none !important;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 15px;
+    max-width: 600px;
+    font-family: 'Amiri', sans-serif;
+    background-color: white;
+    margin-top: 25px;
+    border-radius: 5px
+}
+
+h2 {
+	text-align: center;
+	font-size: 25px;
+	padding: 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif; 
+}
+
+@media (max-width: 767px){
+.hidden-xs {
+    display: none !important;
+}
+}
+
+@media (min-width: 768px){
+.hidden-md {
+    display: none !important;
+}
+}
+
+i {
+  color: #FF3860;
+  font-size: 20px;
+  border-radius: 5%;
+  padding: 5px;
+}
+
+i:hover {
+  cursor: grab;
+}
+
+.like_btn, .fa-thumbs-down, .fa-thumbs-up, .fa-edit {
+  color: #008081 ;
+  background: none !important;
+  border: none !important;
+  font-size: 14px
+}
+
+#edit-btn, .like-btn{
+  width: 90px;
+}
+
+a {
+	text-decoration: none !important  
+}
+
+a:hover {
+	text-decoration: none !important;
+}
+
+p {
+  padding: 0px;
+  margin: 0px;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  white-space: pre-wrap; 
+}
+
+.page-link{
+  color: #008081 ;
+}
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #008081;
+    border-color: #008081
+}
+
+

@@ -1,0 +1,102 @@
+
+
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <div id="show-bid">
+        
+    <!-- Flash Message if there's been a transaction :  -->
+    {% if listing.active == False %}
+        {% if request.user.id == listing.selling_user.id %}
+            <div class="flash-banner">Congratulations ! Your listing has been sold for $ {{ listing.current_bid }} !</div>
+        {% elif request.user.id == listing.buying_user.id %}
+            <div class="flash-banner">Congratulations ! Your bid of $ {{listing.current_bid}} has been accepted by {{ buyer }}</div>
+        {% endif %}
+    {% endif %}
+
+    <!-- Listing description    -->
+    <div class="d-flex justify-content-between">
+        <h1>{{listing.title}}</h1>  
+        <p id="show-bid-price">
+            $ {{ listing.current_price }} 
+         </p>
+    </div>
+       
+    <div class="row">
+        <div class="col-sx-12 col-sm-6">
+            <img src="{{ listing.url }}" id="show-bid-img">
+        </div>
+        <div class="col-sx-12 col-sm-6 show-bid-container mb-0">
+            <div class="d-flex justify-content-between">
+                <div id="show-bid-category">{{listing.category}}</div>
+                <form action="{% url 'watchlist' %}" method="post">
+                    {% csrf_token %}
+                    {% if next_action == "add" %}
+                        <button class="btn-watchlist" name="listing_id" value="{{ listing.id }}" type="submit"><i class="far fa-heart"></i></button>    
+                    {% else %}
+                        <button class="btn-watchlist" name="listing_id" value="{{ listing.id }}"type="submit"><i class="fas fa-heart"></i></button>
+                    {% endif %}
+                </form>
+            </div>
+            <p>{{listing.description}} </p>
+        </div>
+    </div>
+
+    
+    {% if listing.active == True %}
+
+        <!-- Make users bid -->
+        {% if request.user.id != listing.selling_user.id %}       
+            <div class="d-flex justify-content-center align-items-center show-bid-container" id="bid-zone">
+                <i class="far fa-hand-point-up"></i>
+                <p class="p-2">Enter your bid amount : </p>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="number" id="bid-amount-input" name="bid">
+                    <button class="btn-flat" id="btn-bid" type="submit">Bid!</button>
+                    </div>
+                </form>
+            </div>
+        <!-- Make owner able to accept the bid -->
+        {% else %}
+            <div class="d-flex justify-content-center align-items-center show-bid-container" id="bid-zone">
+                <i class="fas fa-gavel"></i>
+                <p class="p-2">Do you want to close this listing ? </p>
+                <form action="{% url 'transaction' %}"method="post">
+                    {% csrf_token %}
+                    <button class="btn-flat" id="btn-bid" type="submit" name="listing_id" value="{{ listing.id }}">Close !</button>
+                    </div>
+                </form>
+            </div>
+        {% endif %}
+         
+        <!-- Comments -->
+        <div class="show-bid-container">
+
+            <!-- Add a new comment  -->
+            <div class="d-flex justify-content-start">
+                <i class="far fa-comment"></i>
+                <p class="p-2">Leave a comment : </p>
+            </div>
+            <form action="{% url 'comment' %}" method='post'>
+                {% csrf_token %}
+                <div class="d-flex justify-content-between">
+                    <textarea name="content" class="w-75"></textarea> 
+                    <button type="submit" name="listing_id" value="{{ listing.id }}"class="btn-flat ">Send</button>
+                </div> 
+            </form>
+
+            <!-- Display all comments --> 
+            {% for comment in comments %}
+                <div class="comment">
+                    <p><em>On {{comment.created_on}} : </p></em>
+                    <p>{{comment.commenting_author}}</p>
+                    <p>{{comment.content}}</p>
+                    
+                </div>
+            {% endfor%}
+        </div>
+
+    {% endif%}
+
+{% endblock %}

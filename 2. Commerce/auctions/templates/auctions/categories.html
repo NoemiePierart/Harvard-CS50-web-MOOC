@@ -1,0 +1,17 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2 class="section-title">Search by Category</h2>
+    
+    <div class="cards">
+
+    	{% for category in categories%}
+		<a href="categories/{{category.name}}">
+		    <div type="submit" name="category_id" value="{{ category.id }}" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url({{category.default_url}})">{{category.name}}</div>
+		</a>
+		{% endfor %}
+
+	</div>
+
+
+{% endblock %}

@@ -1,0 +1,142 @@
+.my-container {
+	min-height: 100; 
+	min-width:400; 	
+	max-width: 80vw;
+<<<<<<< HEAD
+	margin: 50px auto;
+=======
+	margin: 100px auto;
+>>>>>>> 7d3ce9c9e2dc8fd606c2ea63c452b74fb5728996
+	position: relative;
+}
+
+/* NAVBAR*/
+.navbar a {
+	font-family: Arial;
+	font-size: 13px;
+	margin: 10px;
+	color: rgba(0,0,0,0.87);
+    text-decoration: none !important;
+}
+
+#logo {
+	width: 272px;
+	height: 92px;
+	margin: 30px auto;
+	display:flex;
+	justify-content: center;
+}
+
+
+#navbar-advanced {
+	background-color: #f1f1f1;
+	height: 70px;
+}
+
+#navbar-advanced img {
+	height: 30px;
+}
+
+/* SEARCH FORM */
+
+.input-container {
+	width: 80%;
+<<<<<<< HEAD
+	height: 60px;
+=======
+	height: 40px;
+>>>>>>> 7d3ce9c9e2dc8fd606c2ea63c452b74fb5728996
+	border-radius: 30px;
+	margin: 10px auto 30px auto;
+	border: 1px solid lightgray;
+	align-items: center
+}
+
+.row {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+ul {
+	list-style: none;
+
+}
+input {
+	width: 90%;
+	border: none;
+	height: 36px
+}
+
+input:active{
+	border: none;
+}
+
+.input-container:hover {
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#search-icon {
+	color: gray;
+	font-size: 20px;
+	padding-left: 20px;
+	margin-bottom: 7px;
+}
+
+#inputs {
+	width: 90% !important;
+}
+
+#title-advanced {
+	height: 60px;
+	color: #d93025;
+	font-size: 20px;
+	border-bottom: 1px solid lightgray;
+	padding: 15px 0 0 15px;
+}
+
+#advanced-form {
+	font-size: 13px;
+	font-family: arial, sans-serif;
+}
+
+/* BUTTONS*/
+.btn-ghost {
+	background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-flat {
+	background-color: #4d90fe;
+	border: 1px solid #3079ed;
+    color: #fff;
+    font-size: 13px;
+    font-family: arial, sans-serif;
+    border-radius: 3px;
+    padding: 7px;
+    position: absolute;
+    right: 15px;
+<<<<<<< HEAD
+    width: 130px;
+=======
+    min-width: 55px
+>>>>>>> 7d3ce9c9e2dc8fd606c2ea63c452b74fb5728996
+}
+
+#search-buttons {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin: 0 auto;
+}

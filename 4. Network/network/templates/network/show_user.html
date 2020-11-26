@@ -1,0 +1,90 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+	<div class="container">
+		<h2 class="section-title">{{profile_user.username}}</h2>
+		<hr>
+    	<div class="d-flex justify-content-between align-items-center">
+    		<p><strong>{{ following }}</strong> Following </p>
+    		<p><strong>{{ followers }}</strong> Followers</p>
+	    	{% if profile_user != session_user %}
+    			<form action="{% url 'follow' profile_user.id %}" method="POST">
+    				{% csrf_token %}
+	    			{% if connection.connection_is_active == True %}
+	    				<button id="follow_btn"  class="btn-flat" type="submit">Unfollow</button>
+	    			{% else %}
+		    			<button id="follow_btn" class="btn-flat" type="submit">Follow</button>
+	    			{% endif %}
+    			</form>
+	    	{% endif %}
+    	</div>
+    </div>
+
+    <div id="posts_index">
+		{% for post in posts %}
+			<div class="post-card" >
+				<div class="d-flex justify-content-between">
+					<div class="d-flex justify-content-start align-items-center">
+						<!-- Post author and date -->
+						<p><span><a href="{% url 'show_user' post.post_author.id %}" class="post-card-username"><strong>{{post.post_author}}</strong></a>   |  {{post.date}}</span></p>
+						<!-- Edit button -->
+						{% if user.is_authenticated %}
+	            			{% if post.post_author == session_user %}	
+								<!-- Edit button (modal)-->
+								<div data-toggle="modal" data-target="#editModal{{post.id}}">
+									<i class="far fa-edit ml-2"></i>
+								</div>
+								<!-- Edit post : modal  -->
+								<div class="modal fade" id="editModal{{post.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								  <div class="modal-dialog" role="document">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								      	<h5 class="modal-title">Modify your post</h5>
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								          <span aria-hidden="true">&times;</span>
+								        </button>
+								      </div>
+								      <div class="modal-body">
+								        <form action="{% url 'edit' post.id %}" method="POST">
+								        	{% csrf_token %}
+								        	<textarea name="textarea" class="w-100">{{ post.content }} </textarea>
+								    
+								      </div>
+								      <div class="modal-footer">
+								        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								        <button type="submit" id="edit-submit" class="btn btn-flat">Save changes</button>
+								        </form>
+								      </div>
+								    </div>
+								  </div>
+								</div>
+	            			{% endif %}
+	            		{% endif %}
+					</div>
+					
+	            	<!-- Likes count -->
+           			<p class="total-likes"><i class="far fa-heart"></i> {{post.likes_count}}</p>
+           		</div>
+           		
+	            <div class="d-flex justify-content-between" id="bottom-info ">
+	            	<!-- Post content -->
+	            	<p id="post-content" class="w-75">{{post.content}}</p>
+	            	<!-- Like/unlike button -->
+	            	{% if user.is_authenticated %}
+	            		<form action="{% url 'like' post.id %}" method="POST">
+	            			{% csrf_token %}
+	            			{% if post in liked_posts %}
+    							<button class="like_btn" type="submit"><i class="far fa-thumbs-down"></i>Unlike</button>
+    						{% else %}
+	    						<button class="like_btn" type="submit"><i class="far fa-thumbs-up"></i>Like</button>
+    						{% endif %}
+						</form>
+					{% endif %}
+				</div> 	
+			</div>
+		{% endfor %}
+	</div>
+
+{% endblock%}

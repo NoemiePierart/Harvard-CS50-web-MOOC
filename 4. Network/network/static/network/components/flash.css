@@ -1,0 +1,12 @@
+   
+.flash-banner {
+  margin: 20px 0px;
+  padding: 5px;
+  background: #5fbca2;
+  height: 45px;
+  border-radius: 7px;
+  color: white;
+  text-align: center !important;
+  font-size: 18px;
+  width: 100%;
+}

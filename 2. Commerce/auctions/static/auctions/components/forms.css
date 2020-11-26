@@ -1,0 +1,23 @@
+.form {
+  background: white;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  font-size: 13px;
+  padding: 20px;
+  font-family: Montserrat, sans-serif
+  font-size: 16px;
+}
+
+.form label {
+  text-align: left;
+  font-size: 16px;
+}
+
+.form p {
+  font-size: 16px;
+}
+
+.form-control {
+  font-size: 14px;
+  text-align: left;
+}

@@ -1,0 +1,95 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+    <h2 class="section-title">All posts</h2>
+
+	{% for post in page_obj %}
+		<div class="post-card" >
+			<div class="d-flex justify-content-between">
+				<div class="d-flex justify-content-start align-items-center">
+					<!-- Post author and date -->
+					<p><span><a href="{% url 'show_user' post.post_author.id %}" class="post-card-username"><strong>{{post.post_author}}</strong></a>   |  {{post.date}}</span></p>
+					<!-- Edit button -->
+					{% if user.is_authenticated %}
+            			{% if post.post_author == session_user %}	
+							<!-- Edit button (modal)-->
+							<div data-toggle="modal" data-target="#editModal{{post.id}}" class="edit">
+								<button class="like_btn"><i class="far fa-edit ml-2"></i>Edit</button>
+							</div>
+							<!-- Edit post : modal  -->
+							<div class="modal fade" id="editModal{{post.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							  <div class="modal-dialog" role="document">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							      	<h5 class="modal-title">Modify your post</h5>
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							          <span aria-hidden="true">&times;</span>
+							        </button>
+							      </div>
+							      <div class="modal-body">
+							        <form action="{% url 'edit' post.id %}" method="POST">
+							        	{% csrf_token %}
+							        	<textarea name="textarea" class="w-100">{{ post.content }} </textarea>
+							    
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							        <button type="submit" id="edit-submit" class="btn btn-flat">Save changes</button>
+							        </form>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+            			{% endif %}
+            		{% endif %}
+				</div>
+				
+            	<!-- Likes count -->
+       			<p class="total-likes"><i class="far fa-heart"></i> {{post.likes_count}}</p>
+       		</div>
+       		
+            <div class="d-flex justify-content-between" id="bottom-info ">
+            	<!-- Post content -->
+            	<p id="post-content" class="w-75">{{post.content}}</p>
+            	<!-- Like/unlike button -->
+            	{% if user.is_authenticated %}
+            		<form action="{% url 'like' post.id %}" method="POST">
+            			{% csrf_token %}
+            			{% if post in liked_posts %}
+							<button class="like_btn" type="submit"><i class="far fa-thumbs-down"></i>Unlike</button>
+						{% else %}
+    						<button class="like_btn" type="submit"><i class="far fa-thumbs-up"></i>Like</button>
+						{% endif %}
+					</form>
+				{% endif %}
+			</div> 	
+		</div>
+	{% endfor %} 
+
+	<!-- Paginator -->
+	<ul class="pagination justify-content-center">
+    
+	    {% if page_obj.has_previous %}
+  			<li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+	    {% else %}
+  			<li class="disabled page-item"><a class="page-link" href="#">&laquo;</a></li>
+		{% endif %}
+
+	    {% for num in page_obj.paginator.page_range %}
+  			{% ifequal num page_obj.number %}
+    			<li class="active page-item"><a class="page-link" href="#">{{ num }}<span class="sr-only">(current)</span></a></li>
+  			{% else %}
+    			<li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+  			{% endifequal %}
+		{% endfor %}
+
+	    {% if page_obj.has_next %}
+  			<li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+		{% else %}
+  			<li class="disabled page-item"><a class="page-link" href="#">&raquo;</a></li>
+		{% endif %}
+		</ul>
+
+{% endblock%}

@@ -1,0 +1,35 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    
+	<h2 class="section-title">All Listings</h2>
+
+    {% if message %}
+        <div class="flash-banner">{{ message }}</div>
+    {% endif %}
+
+	{% for listing in listings %}
+		<div class="auction-card">
+			<img src={{listing.url}}> 
+			<div class="auction-card-infos d-flex flex-column">
+				<div class="d-flex justify-content-between pb-3">
+					<h2> {{listing.title}}</h2>
+					<div class="bnt-flat">
+						{% if listing.current_bid == 0 %}
+        					$ {{ listing.starting_bid}}
+    					{% else %}	
+					        $ {{listing.current_bid}}
+					    {% endif %}
+					</div>
+				</div>	
+				<p class="flex-grow-1" >{{listing.description}}</p>
+				<div class="d-flex justify-content-between">
+					<p><i class="far fa-clock"></i><em>Closing on {{listing.closing_date}}</em></p>
+					<a href="{% url 'show_listing' listing.id %}" class="btn-ghost">See more</a>
+				</div>
+			</div>
+		</div>
+
+	{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,80 @@
+textarea {
+    min-height: 400px;
+}
+
+.container {
+	font-family: 'Montserrat', sans-serif;
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	background-color: white;
+	border-radius: 6px;
+	margin-top: 20px;
+	padding: 20px;
+	min-height: 90vh;
+	font-size: 14px;
+	color: #707070;
+}
+
+h2 {
+	font-size: 16px;
+	margin-bottom: 20px;
+	color: #57756E;
+}
+
+h3 {
+	font-size: 22px;
+}
+
+p {
+	margin-bottom: 0px
+}
+
+i {
+	color: #84a59d;
+}
+
+.btn-outline-primary {
+	border: 1px solid #84a59d;
+	color: #84a59d;
+	text-decoration: none; 
+	padding: 8px 15px;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+	color: white;
+	background-color: #84a59d;
+	border: none !important;
+}
+
+.btn-flat {
+	color: white;
+	background-color: #84a59d;
+	border: none;
+	text-decoration: none; 
+	padding: 8px 15px;
+	height: 40px;
+	margin-left: 15px;
+}
+
+.bnt-flat:hover {
+	color: white !important;
+	font-size: 16px;
+}
+.row {
+	height: 40px;
+	align-items: center;
+	border-bottom: 1px solid lightgray;
+}
+
+.row:hover {
+	border-bottom: 2px solid lightgray;
+	cursor: grab;
+}
+
+.sender {
+	font-weight: bold
+}
+
+.form-control {
+	font-size: 14px;
+}
+

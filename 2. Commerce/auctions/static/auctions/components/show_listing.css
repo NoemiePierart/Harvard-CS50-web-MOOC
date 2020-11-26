@@ -1,0 +1,69 @@
+#show-bid-img {
+  height: 40vh;
+  background-size: cover !important;
+}
+
+#show-bid h1 {
+	font-size: 30px;
+}
+
+#show-bid-category {
+	border: 1px solid lightgray;
+	border-radius: 7px;
+	padding: 3px 10px;
+	margin: 3px;
+}
+
+#show-bid-price {
+	color: #FF3860;
+	font-size: 25px;
+	padding: 5px;
+}
+
+#show-bid p {
+	margin-left: 15px;
+	margin-top: 15px;
+}
+
+.show-bid-container {
+	background-color: white;
+	border: 1px solid lightgray;
+	border-radius: 6px;
+	width: 100%;
+	padding: 15px;
+	margin-bottom: 10px
+}
+
+#bid-zone {
+	margin-top: 20px;
+}
+
+#bid-amount-input {
+	padding: 0px 25px;
+	height: 35px;
+	border-radius: 7px;
+	border: 1px solid lightgray !important;
+} 
+
+#btn-bid {
+	height: 37px;
+	margin: 0;
+}
+
+.btn-watchlist {
+	border-radius: 5px;
+	position: relative;
+	bottom: 0px;
+	background-color: white;
+	border: none !important
+}
+
+.fa-clock {
+	font-size: 22px;
+}
+
+.comment {
+	border-top: 1px solid lightgray;
+	margin-top: 15px;
+	padding-top: 15px;
+}
