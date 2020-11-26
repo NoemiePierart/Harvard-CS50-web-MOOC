@@ -1,5 +1,5 @@
 # Harvard-CS50-web-MOOC
-Exercices from the EdX Harvard CS50 Web : Programming with Python and JavaScript. 
+<em>Exercices from the EdX Harvard CS50 Web : Programming with Python and JavaScript</em>. 
 
 
 Design and implementation of web apps with Python, JavaScript, and SQL using frameworks like Django, React, and Bootstrap. Topics include database design, scalability, security, user experience, writting and using APIs, interactive UIs, and cloud services like GitHub and Heroku.
